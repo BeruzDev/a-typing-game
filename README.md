@@ -1,70 +1,88 @@
-# Getting Started with Create React App
+# A Typing Game - Juego de Mecanografía Interactivo 🖥️💬
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Una aplicación web diseñada para mejorar la velocidad y precisión en la mecanografía. A Typing Game permite a los usuarios practicar con palabras, frases, o incluso fragmentos de código en varios lenguajes, proporcionando un seguimiento de métricas en tiempo real.
 
-## Available Scripts
+## 📋 Índice
 
-In the project directory, you can run:
+- [Características](#características)
+- [Capturas de Pantalla](#capturas-de-pantalla)
+- [Despliegue](#despliegue)
+- [Uso](#uso)
+- [Estructura del Proyecto](#estructura-del-proyecto)
+- [Tecnologías Utilizadas](#tecnologías-utilizadas)
+- [Contribuciones](#contribuciones)
+- [Licencia](#licencia)
 
-### `npm start`
+## ✨ Características
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Práctica de Mecanografía**: Practica con palabras, frases, o fragmentos de código subidas por el usuario.
+- **Panel de Métricas en Tiempo Real**: Visualización en vivo de velocidad, precisión y errores.
+- **Modo Oscuro/Claro**: Cambia el tema para facilitar la lectura en distintos ambientes.
+- **Sesión de Usuario**: Inicia sesión para guardar tus estadísticas y objetivos diarios.
+- **Personalización de Dificultad**: Ajusta la dificultad eligiendo entre palabras largas o cortas y frases de distintas dificultades.
+- **Modo Extremo**: Modo avanzado en el que solo se muestra la letra actual y sus alrededores, como si estuvieras en una “habitación oscura”.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🖼️ Capturas de Pantalla
 
-### `npm test`
+_**(TODAVÍA ESTOY TRABAJANDO EN ELLO!!)**_
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 🚀 Despliegue
 
-### `npm run build`
+Accede a la aplicación en el siguiente enlace:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+[**A Typing Game**](https://typing-game.netlify.app)  *(enlace provisional, todavía no esta deployed)*
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 🕹️ Uso
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Accede a la página y selecciona el tipo de práctica (palabras, frases o código).
+2. Escribe en el cuadro de texto en el centro para comparar con el texto objetivo.
+3. Observa las métricas en tiempo real, como la velocidad, precisión y errores.
+4. Puedes iniciar sesión si deseas guardar tu progreso o continuar como invitado.
+5. Ajusta el modo de visualización claro/oscuro usando el conmutador de tema.
 
-### `npm run eject`
+## 📂 Estructura del Proyecto
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```plaintext
+src
+├── components
+│   ├── InputBox.jsx          # Componente donde el usuario escribe
+│   ├── ModeSwitcher.jsx      # Selector de modo claro/oscuro
+│   ├── StatsPanel.jsx        # Panel de métricas en tiempo real
+│   ├── Summary.jsx           # Resumen al final de la sesión
+│   └── TextDisplay.jsx       # Componente que muestra el texto objetivo
+├── hooks
+│   └── useTimer.js           # Hook personalizado para controlar el temporizador
+├── styles
+│   ├── main.scss             # Estilos principales y variables globales
+│   ├── base
+│   │   ├── _reset.scss       # Estilos de reset
+│   │   └── _typography.scss  # Estilos de tipografía
+│   ├── components
+│   │   ├── _InputBox.scss
+│   │   ├── _StatsPanel.scss
+│   │   └── _TextDisplay.scss
+│   ├── layout
+│   │   ├── _container.scss
+│   │   ├── _footer.scss
+│   │   └── _header.scss
+│   └── utils
+│       ├── _colors.scss      # Paleta de colores
+│       ├── _functions.scss   # Funciones Sass
+│       └── _mixins.scss      # Mixins de estilos
+├── App.js
+└── index.js
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 🛠️ Tecnologías Utilizadas
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- **Frontend**: React, Sass
+- **Estilos**: SCSS, CSS Modules
+- **Autenticación**: Implementación con Firebase (o tu elección de backend para login opcional)
+- **Despliegue**: Netlify
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## 🤝 Contribuciones
 
-## Learn More
+Las contribuciones son bienvenidas. Si deseas mejorar el proyecto, abre un issue o envía un pull request.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 📄 Licencia
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Este proyecto está bajo la Licencia MIT.
