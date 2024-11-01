@@ -81,7 +81,8 @@ src
 
 ## 🤝 Contribuciones
 
-Las contribuciones son bienvenidas. Si deseas mejorar el proyecto, abre un issue o envía un pull request.
+Las contribuciones son bienvenidas. 
+Si deseas mejorar el proyecto, abre un issue o envía un pull request.
 
 ## 📄 Licencia
 
