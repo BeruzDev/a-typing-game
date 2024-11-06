@@ -1,3 +1,7 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono:wght@400;700&display=swap');
+
 // Base
 @import './base/reset';
 @import './base/typography';
@@ -8,6 +12,10 @@
 @import './components/Summary';
 @import './components/TextDisplay';
 
+// Keyboard
+@import './components/keyboard/keyboard';
+@import './components/keyboard/key';
+
 // Layout
 @import './layout/container';
 @import './layout/footer';
@@ -17,3 +25,70 @@
 @import './utils/colors';
 @import './utils/functions';
 @import './utils/mixins';
+
+.app{
+    height: 100vh;
+    width: 100vw;
+    padding: 25px 120px 25px 120px;
+
+    .display{
+        height: 100%;
+        display: grid;
+        grid-template-rows: 15% 85%;
+        row-gap: 10px;
+    
+        .top-row{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-left: 20px;
+        }
+    
+        .bot-row{
+            display: grid;
+            grid-template-columns: auto 750px auto;
+            column-gap: 10px;
+            
+
+            .left-column{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+
+                //*solo para ver la disposición
+                border: solid 2px $primary-dark;
+                border-radius: 25px;
+            }
+
+            .center-column{
+                display: grid;
+                grid-template-rows: 1fr 1fr;
+
+                .display-text-display{
+                    width: 100%;
+                    padding: 20px;
+
+                    //*solo para ver la disposición
+                    border: solid 2px $primary-dark;
+                    border-radius: 25px;
+                }
+
+                .display-input-box{
+                    padding-top: 25px;
+                    display: flex;
+                    align-items: flex-start;
+                }
+            }
+
+            .right-column{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+
+                //*solo para ver la disposición
+                border: solid 2px $primary-dark;
+                border-radius: 25px;
+            }
+        }
+    }
+}

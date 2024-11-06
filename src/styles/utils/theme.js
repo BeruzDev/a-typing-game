@@ -9,7 +9,10 @@ const lightTheme = createTheme({
         text: {
             primary: '#3d475c'
         }
-    }
+    },
+    typography: {
+        fontFamily: '"Poppins", sans-serif',
+    },
 })
 
 const darkTheme = createTheme({
@@ -21,7 +24,10 @@ const darkTheme = createTheme({
         text: {
             primary: '#6c6666',
         }
-    }
+    },
+    typography: {
+        fontFamily: '"Poppins", sans-serif',
+    },
 })
 
 export {lightTheme, darkTheme}

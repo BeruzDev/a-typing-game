@@ -1,0 +1,94 @@
+@import '../../utils/colors';
+
+.key{
+    padding: 2px 2px 2px 4px;
+    height: 38px;
+    margin: 2px;
+    border-radius: 5px;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 50% 50%;
+    align-items: center;
+
+    .shift-symbol{
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+        opacity: 60%;
+    }
+
+    .normal-char{
+        grid-column: 1 / 2;
+        grid-row: 2 / 2;
+        font-weight: 600;
+    }
+
+    .alt-symbol{
+        grid-column: 2 / 2;
+        grid-row: 2 / 2;
+        opacity: 60%;
+    }
+}
+
+.default{
+    width: 38px;
+    font-size: 13px;
+}
+
+.esc{
+    width: 38px;
+    font-size: 10px;
+}
+
+.backspace{
+    width: 76px;
+    font-size: 10px;
+}
+
+.tab{
+    width: 57px;
+    font-size: 20px;
+}
+
+.cetrencada{
+    width: 57px;
+    font-size: 13px;
+}
+
+.capslock{
+    width: 64.5px;
+    font-size: 10px;
+}
+
+.enter{
+    width: 91.5px;
+}
+
+.pgup{
+    width: 38px;
+    font-size: 10px;
+}
+
+.pgdn{
+    width: 38px;
+    font-size: 10px;
+}
+
+.ctrl{
+    width: 47.75px;
+    font-size: 10px;
+}
+
+.space{
+    width: 256.75px;
+}
+
+.fn{
+    width: 38px;
+    font-size: 10px;
+}
+
+.arrows{
+    width: 38px;
+    font-size: 15px;
+    
+}
