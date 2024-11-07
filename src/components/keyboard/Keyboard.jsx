@@ -1,9 +1,10 @@
 import React from 'react'
-import Key from './Key'
-import keys from './keys'
+import Key from './Key.jsx'
+import keys from './keys.js'
 import '../../styles/components/keyboard/_keyboard.scss'
 
-const keyboard = ({ keyColors }) => {
+const Keyboard = ({ activeKey }) => {
+    
     return (
         <div className='keyboard'>
             {keys.map((row, rowIndex) => (
@@ -15,6 +16,7 @@ const keyboard = ({ keyColors }) => {
                             shift={keyData.shift}
                             alt={keyData.alt}
                             size={keyData.size}
+                            isActive={activeKey === keyData.keyListener}
                         />
                     ))}
                 </div>
@@ -23,4 +25,4 @@ const keyboard = ({ keyColors }) => {
     )
 }
 
-export default keyboard
+export default Keyboard

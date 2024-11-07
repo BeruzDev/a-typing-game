@@ -31,6 +31,33 @@ function App() {
     })
   }
 
+  // Estado que almacena la tecla activa
+  const [activeKey, setActiveKey] = useState(null);
+
+  useEffect(() => {
+      // Activa la tecla presionada
+      const handleKeyDown = (event) => {
+        console.log('Tecla presionada: ', event.key)
+          setActiveKey(event.key)
+      }
+
+      // Desactiva la tecla presionada
+      const handleKeyUp = (event) => {
+          setActiveKey(null)
+      }
+
+      // Almacenamos el evento en cada función
+      window.addEventListener('keydown', handleKeyDown)
+      window.addEventListener('keyup', handleKeyUp)
+
+      return () => {
+          // Limpia los listeners cuando se desmonta el componente
+          window.removeEventListener('keydown', handleKeyDown)
+          window.removeEventListener('keyup', handleKeyUp)
+
+      };
+  }, []);
+
   return (
     <ThemeProvider theme={isDarkMode ? darkTheme : lightTheme}>
       <CssBaseline />
@@ -49,7 +76,7 @@ function App() {
                 <TextDisplay />
               </div>
               <div className='display-input-box'>
-                <InputBox />
+                <InputBox  activeKey={activeKey}/>
               </div>
             </div>
             <div className='right-column'>

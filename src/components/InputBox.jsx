@@ -1,13 +1,13 @@
 import React from 'react'
 import '../styles/components/_InputBox.scss'
-import Keyboard from './keyboard/Keyboard'
+import Keyboard from './keyboard/Keyboard.jsx'
 
 
-const InputBox = () => {
+const InputBox = ({ activeKey }) => {
 
     return (
         <div className='input-box'>
-            <Keyboard/>
+            <Keyboard activeKey={activeKey}/>
         </div>
     )
 }
