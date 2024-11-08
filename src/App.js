@@ -6,8 +6,11 @@ import InputBox from "./components/InputBox";
 import StatsPanel from "./components/StatsPanel";
 import Summary from "./components/Summary";
 import TextDisplay from "./components/TextDisplay";
+import './styles/main.scss';
 
 function App() {
+//*** Cambiar tema dark/light ***
+
 //Estado dark/light  
   const [isDarkMode, setIsDarkMode] = useState(false); //<-Modo claro por defecto
 
@@ -18,7 +21,6 @@ function App() {
     const savedThemePreference = localStorage.getItem('isDarkMode') === 'true';
     setIsDarkMode(savedThemePreference) //<-Recogemos el valor 'true' o 'false' del local storage y una vez pasado a booleano actualizamos el estado con setIsDarkMode.
     return () => {
-      
     };
   }, []);
 
@@ -31,15 +33,63 @@ function App() {
     })
   }
 
+
+//*** Listener para las teclas ***
+
+  // Estado que almacena la tecla activa
+  const [activeKey, setActiveKey] = useState(null);
+
+  useEffect(() => {
+      // Activa la tecla presionada
+      const handleKeyDown = (event) => {
+        console.log('Tecla presionada "key": ', event.key)
+        console.log('Tecla presionada "code": ', event.code)
+          setActiveKey(event.code)
+      }
+
+      // Desactiva la tecla presionada
+      const handleKeyUp = (event) => {
+          setActiveKey(null)
+      }
+
+      // Almacenamos el evento en cada función
+      window.addEventListener('keydown', handleKeyDown)
+      window.addEventListener('keyup', handleKeyUp)
+
+      return () => {
+          // Limpia los listeners cuando se desmonta el componente
+          window.removeEventListener('keydown', handleKeyDown)
+          window.removeEventListener('keyup', handleKeyUp)
+
+      };
+  }, []);
+
   return (
     <ThemeProvider theme={isDarkMode ? darkTheme : lightTheme}>
       <CssBaseline />
-      <div>
-        <ModeSwitcher toggleTheme={toggleTheme} isDarkMode={isDarkMode}/>
-        <InputBox/>
-        <StatsPanel/>
-        <Summary/>
-        <TextDisplay/>
+      <div className='app'>
+        <div className='display'>
+          <div className='top-row'>
+            <h2>A Typing Game</h2>
+            <ModeSwitcher toggleTheme={toggleTheme} isDarkMode={isDarkMode}/>
+          </div>
+          <div className='bot-row'>
+            <div className='left-column'>
+              <Summary />
+            </div>
+            <div className='center-column'>
+              <div className='display-text-display'>
+                <TextDisplay />
+              </div>
+              <div className='display-input-box'>
+                <InputBox  activeKey={activeKey}/>
+              </div>
+            </div>
+            <div className='right-column'>
+              <StatsPanel />
+            </div>
+          </div>
+        </div>
       </div>
     </ThemeProvider> 
   );
