@@ -76,7 +76,6 @@ src
 
 - **Frontend**: React, Sass
 - **Estilos**: SCSS, CSS Modules
-- **Autenticación**: Implementación con Firebase (o tu elección de backend para login opcional)
 - **Despliegue**: Netlify
 
 ## 🤝 Contribuciones
