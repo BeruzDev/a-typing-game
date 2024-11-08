@@ -9,6 +9,8 @@ import TextDisplay from "./components/TextDisplay";
 import './styles/main.scss';
 
 function App() {
+//*** Cambiar tema dark/light ***
+
 //Estado dark/light  
   const [isDarkMode, setIsDarkMode] = useState(false); //<-Modo claro por defecto
 
@@ -31,14 +33,18 @@ function App() {
     })
   }
 
+
+//*** Listener para las teclas ***
+
   // Estado que almacena la tecla activa
   const [activeKey, setActiveKey] = useState(null);
 
   useEffect(() => {
       // Activa la tecla presionada
       const handleKeyDown = (event) => {
-        console.log('Tecla presionada: ', event.key)
-          setActiveKey(event.key)
+        console.log('Tecla presionada "key": ', event.key)
+        console.log('Tecla presionada "code": ', event.code)
+          setActiveKey(event.code)
       }
 
       // Desactiva la tecla presionada

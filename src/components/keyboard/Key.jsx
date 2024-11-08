@@ -11,8 +11,6 @@ const Key = ({ chart, shift, alt, size, isActive }) => {
         secondary: theme.palette.mode === 'dark' ? '#292929' : '#cac8c8'
     }
 
-    //isActive && console.log(`Tecla activa en el teclado virtual: ${chart}`);
-
     return (
         <div 
             className={`key ${size} ${isActive ? 'active' : ''}`}
