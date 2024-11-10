@@ -42,6 +42,12 @@
             align-items: center;
             justify-content: space-between;
             padding-left: 20px;
+            
+            .icon-section{
+                display: flex;
+                flex-direction: row;
+                column-gap: 5px;
+            }
         }
     
         .bot-row{
