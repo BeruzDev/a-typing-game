@@ -1,0 +1,14 @@
+.text-container{
+
+    .correct{
+        opacity: 0.5;
+    }
+
+    .incorrect{
+        color: $error-color;
+    }
+
+    .current {
+        text-decoration: underline;
+    }
+}
