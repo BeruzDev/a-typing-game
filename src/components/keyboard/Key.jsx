@@ -7,8 +7,8 @@ const Key = ({ chart, shift, alt, size, isActive }) => {
     const theme = useTheme()
 
     const keyColors = {
-        primary: theme.palette.mode === 'dark' ? '#6c6666' : '#3d475c',
-        secondary: theme.palette.mode === 'dark' ? '#292929' : '#cac8c8'
+        primary: theme.palette.mode === 'dark' ? '#83E949' : '#7736EE',
+        secondary: theme.palette.mode === 'dark' ? '#542967' : '#CAC8C8'
     }
 
     return (

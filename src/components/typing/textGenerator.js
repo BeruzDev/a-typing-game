@@ -9,6 +9,7 @@ const levels = {
     level4: 'abcdefghijklmnopqrstuvwxyzñáéíóú0123456789',
     level5: 'abcdefghijklmnopqrstuvwxyzñáéíóú0123456789.,!?@#$*&()-=+',
     level6: `abcdefghijklmnopqrstuvwxyzñáéíóú0123456789.,!?@#$*&()-=+<>/[]{}\\|"'`,
+    level7: 'Enhorabuena, has superado todos los niveles!' //Sigue practicando para mejorar tu mecanografía!
 }
 
 // Generar palabras random
@@ -30,8 +31,9 @@ function generateRandomWord(level, minLen = 2, maxLen = 8) {
 
 // Generar palabras
 function generateRandomSentences(level, wordCount) {
+    if (level === 'level7') return levels.level7
+
     const sentence = []
-    
     for (let i = 0; i < wordCount; i++) {
         sentence.push(generateRandomWord(level))
     }

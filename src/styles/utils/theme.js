@@ -4,10 +4,10 @@ const lightTheme = createTheme({
     palette: {
         mode: 'light',
         background: {
-            default: '#f4f0f0',
+            default: '#EAECF8',
         },
         text: {
-            primary: '#3d475c'
+            primary: '#7736EE'
         }
     },
     typography: {
@@ -19,10 +19,10 @@ const darkTheme = createTheme({
     palette: {
         mode: 'dark',
         background: {
-            default: '#333333',
+            default: '#222036',
         },
         text: {
-            primary: '#6c6666',
+            primary: '#83E949',
         }
     },
     typography: {

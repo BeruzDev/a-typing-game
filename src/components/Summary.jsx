@@ -1,9 +1,12 @@
 import React from 'react'
+import LevelCount from './summary/LevelCount'
+import TimerCount from './summary/TimerCount'
 
 const Summary = () => {
     return (
-        <div>
-            <p>Resumen al final de la sesión</p>
+        <div className='summary'>
+            {/* <TimerCount /> */}
+            <LevelCount />
         </div>
     )
 }

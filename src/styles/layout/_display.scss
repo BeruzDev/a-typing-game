@@ -24,14 +24,13 @@
     
         .bot-row{
             display: grid;
-            grid-template-columns: auto 750px auto;
+            grid-template-columns: 15% 750px 15%;
             column-gap: 10px;
-            
+            justify-content: center;
 
             .left-column{
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
+                height: 100%;
+                width: 100%;
 
                 //*solo para ver la disposición
                 border: solid 2px $primary-dark;
@@ -45,7 +44,7 @@
                 .display-text-display{
                     width: 750px;
                     max-height: 200px;
-                    padding: 20px;
+                    padding: 20px 35px;
                     font-family: 'Ubuntu Mono', monospace;
                     font-size: 1.8rem;
                     
@@ -62,9 +61,8 @@
             }
 
             .right-column{
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
+                height: 100%;
+                width: 100%;
 
                 //*solo para ver la disposición
                 border: solid 2px $primary-dark;
