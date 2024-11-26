@@ -1,0 +1,18 @@
+function {
+    if (level)
+
+    const sentence = []
+    for (let i = 0; i < wordCount; i++) {
+        sentence.push(generateRandomWord(level))
+    }
+
+    let punctuation = ''
+    if (level !== 'level1' && level !== 'level2' && level  !== 'level3') {
+        punctuation = random.pick(['.', '!', '?'])
+    } 
+    return sentence.join(' ') + punctuation
+}
+
+
+curl parrot.
+

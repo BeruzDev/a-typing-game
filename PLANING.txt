@@ -1,7 +1,0 @@
-1.TextDisplay: Es el componente que muestra el texto que el usuario debe escribir. Es crucial para visualizar bien el juego, y no requiere mucha interacción con otros elementos.
-
-2.InputBox: Este será el componente donde el usuario escriba. Al ser interactivo, es bueno tenerlo temprano para hacer pruebas con el estado y la lógica básica de captura de entrada.
-
-3.StatsPanel: Puedes estructurar este componente para mostrar estadísticas generales como palabras por minuto, errores y precisión.
-
-4.Summary: Aunque se puede crear después, podrías también construir la estructura inicial con el propósito de mostrar un resumen final de las estadísticas.

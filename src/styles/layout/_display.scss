@@ -33,8 +33,8 @@
                 width: 100%;
 
                 //*solo para ver la disposición
-                border: solid 2px $primary-dark;
-                border-radius: 25px;
+                // border: solid 2px;
+                // border-radius: 25px;
             }
 
             .center-column{
@@ -44,14 +44,9 @@
                 .display-text-display{
                     width: 750px;
                     max-height: 200px;
-                    padding: 20px 35px;
+                    padding: 20px 35px 15px 35px;
                     font-family: 'Ubuntu Mono', monospace;
                     font-size: 1.8rem;
-                    
-
-                    // //*solo para ver la disposición
-                    // border: solid 2px $primary-dark;
-                    // border-radius: 25px;
                 }
 
                 .display-input-box{
@@ -65,8 +60,8 @@
                 width: 100%;
 
                 //*solo para ver la disposición
-                border: solid 2px $primary-dark;
-                border-radius: 25px;
+                // border: solid 2px;
+                // border-radius: 25px;
             }
         }
     }

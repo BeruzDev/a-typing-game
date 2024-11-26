@@ -6,7 +6,7 @@ const Summary = () => {
     return (
         <div className='summary'>
             {/* <TimerCount /> */}
-            <LevelCount />
+            {/* <LevelCount /> */}
         </div>
     )
 }

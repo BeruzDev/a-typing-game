@@ -8,6 +8,10 @@ const lightTheme = createTheme({
         },
         text: {
             primary: '#7736EE'
+        },
+        scrollbar: {
+            track: '#CAC8C8',
+            thumb: '#7736EE'
         }
     },
     typography: {
@@ -23,6 +27,10 @@ const darkTheme = createTheme({
         },
         text: {
             primary: '#83E949',
+        },
+        scrollbar: {
+            track: '#542967',
+            thumb: '#83E949'
         }
     },
     typography: {
