@@ -29,41 +29,23 @@ const UserGeneratedText = ({activeChar}) => {
     const containerRef = useRef(null)
 
     useEffect(() => {
-        if (!activeChar) return
-        const currentChar = userText[currentIndex]
+        if (!activeChar) return;
 
-        if (currentChar === ' '){
-            const nextIndex = userText.slice(currentIndex + 1).search(/\S/)
-            if (nextIndex >= 0){
-                setCurrentIndex((prevIndex) => prevIndex + nextIndex + 1)
-            } else {
-                setCurrentIndex((prevIndex) => prevIndex + 1)
-            }
-        }else if (currentChar === '\n') {
+        const currentChar = userText[currentIndex];
+
+        if (currentChar === activeChar) {
+            setCurrentIndex((prevIndex) => prevIndex + 1);
+        } else if (currentChar === ' ' || currentChar === '\n') {
             const remainingText = userText.slice(currentIndex + 1);
-            const nextNonSpaceIndex = remainingText.search(/\S/); // Encuentra el próximo carácter no vacío
+            const nextNonSpaceIndex = remainingText.search(/\S/);
             if (nextNonSpaceIndex >= 0) {
-                setCurrentIndex(currentIndex + nextNonSpaceIndex + 1); // Ajusta el índice
+                setCurrentIndex((prevIndex) => prevIndex + nextNonSpaceIndex + 1);
             } else {
-                setCurrentIndex(userText.length); // Si no hay más texto, avanza al final
+                setCurrentIndex(userText.length); // Mueve al final si no hay más caracteres
             }
         } else {
-            if (activeChar === currentChar) {
-                setCurrentIndex((prevIndex) => prevIndex + 1)
-            } else if (currentChar !== ' ') {
-                setMistakes((prevMistakes) => [...prevMistakes, currentIndex])
-                setCurrentIndex((prevIndex) => prevIndex + 1)
-            } else {
-                const remainingText = userText.slice(currentIndex + 1);
-                const nextIndex = remainingText.search(/\S/); // Busca el siguiente carácter no vacío
-                if (nextIndex >= 0) {
-                    // Avanzamos hasta el siguiente carácter no vacío
-                    setCurrentIndex((prevIndex) => prevIndex + nextIndex + 1);
-                } else {
-                    // Si no hay caracteres no vacíos, avanzamos al final del texto
-                    setCurrentIndex((prevIndex) => prevIndex + 1)
-                }
-            }
+            setMistakes((prevMistakes) => [...prevMistakes, currentIndex]);
+            setCurrentIndex((prevIndex) => prevIndex + 1);
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [activeChar]);
@@ -73,7 +55,7 @@ const UserGeneratedText = ({activeChar}) => {
         if (containerRef.current) {
             const element = containerRef.current.children[currentIndex]
             if (element && element.textContent.trim() !== ' ') {
-                element.scrollIntoView({ behavior: 'smooth', inline: 'nearest' }) //Todo <-> arreglar temblor de scroll
+                element.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'nearest' });
             }
         }
     }, [currentIndex]);
