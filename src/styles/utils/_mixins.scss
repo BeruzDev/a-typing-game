@@ -1,0 +1,31 @@
+// _mixins.scss
+
+@mixin for-small-laptop {
+    @media (max-width: 1024px) {
+        @content;
+    }
+}
+
+@mixin for-medium-laptop {
+    @media (min-width: 1025px) and (max-width: 1280px) {
+        @content;
+    }
+}
+
+@mixin for-large-laptop {
+    @media (min-width: 1281px) and (max-width: 1440px) {
+        @content;
+    }
+}
+
+@mixin for-desktop {
+    @media (min-width: 1441px) and (max-width: 1920px) {
+        @content;
+    }
+}
+
+@mixin for-large-desktop {
+    @media (min-width: 1921px) {
+        @content;
+    }
+}

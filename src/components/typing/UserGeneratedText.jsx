@@ -89,7 +89,7 @@ const UserGeneratedText = ({activeChar}) => {
     return (
         <div className='user-text'>
             {!isTextEntered ? (
-                <div>
+                <div className='drag-text-cont'>
                     <textarea 
                         className='drag-text'
                         style={{
