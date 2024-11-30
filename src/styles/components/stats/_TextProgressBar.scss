@@ -1,0 +1,29 @@
+.progress-bar{
+    position: relative;
+    height: 20px;
+    width: 70%;    
+    display: flex;
+    align-items: center;
+
+    .background{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        opacity: 40%;
+        border-radius: 5px;
+    }
+    
+    .text{
+        position: absolute;
+        font-size: .8rem;
+        padding-left: 5px;
+        opacity: 60%;
+    }
+
+    .foreground{
+        position: absolute;
+        height: 100%;
+        transition: width 0.5s ease;
+        border-radius: 5px;
+    }
+}

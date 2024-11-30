@@ -1,12 +1,14 @@
 import React from 'react'
+import AverageWpm from './summary/AverageWpm'   
 import LevelCount from './summary/LevelCount'
 import TimerCount from './summary/TimerCount'
 
-const Summary = () => {
+const Summary = ({ averageWpm, lastLevelTime, currentLevel, isUserGenerated  }) => {
     return (
         <div className='summary'>
-            {/* <TimerCount /> */}
-            {/* <LevelCount /> */}
+            <LevelCount currentLevel={currentLevel} isUserGenerated={isUserGenerated} />
+            <AverageWpm averageWpm={averageWpm} />
+            <TimerCount lastLevelTime={lastLevelTime} />
         </div>
     )
 }

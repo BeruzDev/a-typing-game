@@ -23,6 +23,13 @@
 // Summary
 @import './components/summary/LevelCount';
 @import './components/summary/TimerCount';
+@import './components/summary/AverageWpm';
+
+// Stats
+@import './components/stats/WpmCounter';
+@import './components/stats/AccuracyChart';
+@import './components/stats/TimeCounter';
+@import './components/stats/TextProgressBar';
 
 // Layout
 @import './layout/display';

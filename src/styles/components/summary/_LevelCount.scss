@@ -1,0 +1,19 @@
+.level-counter{
+    display: grid;
+    grid-template-rows: .5fr 1.5fr;
+    align-items: center;
+    width: 60%;
+    
+    .title{
+        font-size: 1rem;
+        font-weight: 600;
+        opacity: 60%;
+    }
+
+    .info{
+        display: flex;
+        justify-content: center;
+        font-size: 2.5rem;
+        font-weight: 500;
+    }
+}

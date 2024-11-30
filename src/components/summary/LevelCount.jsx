@@ -1,9 +1,14 @@
 import React from 'react'
 
-const LevelCount = () => {
+const LevelCount = ({ currentLevel, isUserGenerated }) => {
+
+
     return (
-        <div>
-            <p>LEVEL</p>
+        <div className='level-counter'>
+            <div className='title'>nivel</div>
+            <div className='info'>
+                {isUserGenerated ? '< / >' : currentLevel}
+            </div>
         </div>
     )
 }

@@ -1,7 +1,7 @@
 import React,{ useState, useEffect, useRef } from 'react'
 import { useTheme } from '@mui/material/styles'
 
-const UserGeneratedText = ({activeChar}) => {
+const UserGeneratedText = ({activeChar, onProgressChange}) => {
     const theme = useTheme()
 
     const textareaColors = {
@@ -24,6 +24,11 @@ const UserGeneratedText = ({activeChar}) => {
     const [isTextEntered, setIsTextEntered] = useState(false);
     const [currentIndex, setCurrentIndex] = useState(0);
     const [mistakes, setMistakes] = useState([]);
+
+    useEffect(() => {
+        const progress = (currentIndex / userText.length) * 100;
+        onProgressChange(progress)
+    }, [currentIndex, userText.length, onProgressChange]);
 
     // Referencia del contenedor text-to-compare
     const containerRef = useRef(null)

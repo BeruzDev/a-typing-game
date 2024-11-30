@@ -1,9 +1,16 @@
 import React from 'react'
+import WpmCounter from './stats/WpmCounter'
+import AccuracyChart from './stats/AccuracyChart'
+import TimeCounter from './stats/TimeCounter'
+import TextProgressBar from './stats/TextProgressBar'
 
-const StatsPanel = () => {
+const StatsPanel = ({ wpm, elapsedTime, progress }) => {
     return (
         <div className='stats-panel'>
-            {/* <p>Panel de métricas en tiempo real</p> */}
+            <WpmCounter wpm={wpm}/>
+            <TimeCounter elapsedTime={elapsedTime} />
+            <TextProgressBar progress={progress} />
+            <AccuracyChart />
         </div>
     )
 }

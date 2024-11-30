@@ -35,17 +35,13 @@
                 grid-template-columns: 100%;
             }
 
-            @include for-medium-laptop {
-                grid-template-columns: 100%;
-            }
-
             .left-column{
                 height: 100%;
                 width: 100%;
 
                 //*solo para ver la disposición
-                border: solid 2px;
-                border-radius: 25px;
+                // border: solid 2px;
+                // border-radius: 25px;
             }
 
             .center-column{
@@ -72,9 +68,6 @@
                 .display-input-box{
                     display: flex;
                     align-items: flex-start;
-                    //*solo para ver la disposición
-                    border: solid 2px;
-                    border-radius: 25px;
                 }
             }
 
@@ -83,8 +76,8 @@
                 width: 100%;
 
                 //*solo para ver la disposición
-                border: solid 2px;
-                border-radius: 25px;
+                // border: solid 2px;
+                // border-radius: 25px;
             }
         }
     }

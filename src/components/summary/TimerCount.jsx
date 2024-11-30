@@ -1,24 +1,12 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 
-const TimerCount = ({ onTimeUp }) => {
-    const [timeLeft, setTimeLeft] = useState(300); // <-Temporizador de 60 segundos
-
-    useEffect(() => {
-        if (timeLeft === 0) {
-            onTimeUp() // <-LLamar cuando el tempo termina
-            return
-        }
-
-        const timer = setInterval(() => {
-            setTimeLeft(prevTime => prevTime - 1)
-        }, 1000)
-
-        return () => clearInterval(timer) // <-Limpiar el intervalo cuando el componente se desmonta
-    }, [timeLeft, onTimeUp]);
+const TimerCount = ({ lastLevelTime }) => {
+    
 
     return (
         <div className='temporizador'>
-            {timeLeft}
+            <div className='title'>último tiempo</div>
+            <div className='info'>{lastLevelTime}</div>
         </div>
     )
 }
