@@ -26,9 +26,11 @@ const UserGeneratedText = ({ activeChar, onProgressChange, updateAccuracyData })
     const [mistakes, setMistakes] = useState([]);
 
     useEffect(() => {
-        const progress = (currentIndex / userText.length) * 100;
-        onProgressChange(progress)
-    }, [currentIndex, userText.length, onProgressChange]);
+        if (userText){
+            const progress = (currentIndex / userText.length) * 100;
+            onProgressChange(progress)
+        }
+    }, [currentIndex, userText, onProgressChange]);
 
     // Referencia del contenedor text-to-compare
     const containerRef = useRef(null)
@@ -57,9 +59,12 @@ const UserGeneratedText = ({ activeChar, onProgressChange, updateAccuracyData })
 
     //Calcular precisión
     useEffect(() => {
+        if (currentIndex === 0 || userText.length === 0) return
+
         const total = userText.length
+        const totalTyped = currentIndex
         const incorrect = mistakes.length
-        const correct = total - incorrect
+        const correct = totalTyped - incorrect
 
         const accuracyData = {
             correct: (correct / total) * 100,
@@ -69,7 +74,7 @@ const UserGeneratedText = ({ activeChar, onProgressChange, updateAccuracyData })
         console.log(accuracyData);
 
         updateAccuracyData(accuracyData)
-    }, [userText.length, mistakes, updateAccuracyData]);
+    }, [userText.length, currentIndex, mistakes.length, updateAccuracyData]);
 
     // Mantener el focus del scroll en el currentIndex
     useEffect(() => {

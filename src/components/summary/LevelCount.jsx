@@ -1,4 +1,5 @@
 import React from 'react'
+import { TbCode } from "react-icons/tb";
 
 const LevelCount = ({ currentLevel, isUserGenerated }) => {
 
@@ -7,7 +8,7 @@ const LevelCount = ({ currentLevel, isUserGenerated }) => {
         <div className='level-counter'>
             <div className='title'>nivel</div>
             <div className='info'>
-                {isUserGenerated ? '< / >' : currentLevel}
+                {isUserGenerated ? <TbCode /> : currentLevel}
             </div>
         </div>
     )

@@ -10,7 +10,7 @@
 
         .drag-text{
             font-family: 'Ubuntu Mono', monospace;
-            font-size: 1.5rem;
+            font-size: 1.7rem;
             display: flex;
             justify-content: center;
             resize: none;
@@ -59,11 +59,12 @@
     }
 
     .text-to-compare{
-        font-size: 1.5rem;
+        font-size: 1.7rem;
         white-space: pre-wrap;
         max-height: 185px;
         contain: content;
         overflow: hidden;
+        //todo: hacer que el contenedor este desenfocado por la parte inferior y superior
 
         @include for-small-laptop {
             max-height: 185px
