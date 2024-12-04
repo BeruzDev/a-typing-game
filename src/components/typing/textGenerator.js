@@ -9,7 +9,7 @@ const levels = {
     level4: 'abcdefghijklmnopqrstuvwxyzñ0123456789',
     level5: 'abcdefghijklmnopqrstuvwxyzñ0123456789',
     level6: 'abcdefghijklmnopqrstuvwxyzñ0123456789',
-    level7: 'Enhorabuena, has superado todos los niveles! Sigue practicando para mejorar tu mecanografía!'
+    level7: 'Enhorabuena, has superado todos los niveles!'
 }
 
 const symbols = '.,!?@#$*&()-=+<>/[]{}\\|\'"'

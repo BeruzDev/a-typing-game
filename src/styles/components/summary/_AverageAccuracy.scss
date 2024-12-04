@@ -1,4 +1,4 @@
-.level-counter{
+.accuracy-average{
     display: grid;
     grid-template-rows: .5fr 1.5fr;
     align-items: center;
@@ -13,7 +13,7 @@
     .info{
         display: flex;
         justify-content: center;
-        font-size: 3.5rem;
+        font-size: 2.5rem;
         font-weight: 500;
     }
 }

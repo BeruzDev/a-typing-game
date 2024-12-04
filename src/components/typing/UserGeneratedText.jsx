@@ -1,7 +1,7 @@
 import React,{ useState, useEffect, useRef } from 'react'
 import { useTheme } from '@mui/material/styles'
 
-const UserGeneratedText = ({activeChar, onProgressChange}) => {
+const UserGeneratedText = ({ activeChar, onProgressChange, updateAccuracyData }) => { 
     const theme = useTheme()
 
     const textareaColors = {
@@ -54,6 +54,22 @@ const UserGeneratedText = ({activeChar, onProgressChange}) => {
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [activeChar]);
+
+    //Calcular precisión
+    useEffect(() => {
+        const total = userText.length
+        const incorrect = mistakes.length
+        const correct = total - incorrect
+
+        const accuracyData = {
+            correct: (correct / total) * 100,
+            incorrect: (incorrect / total) * 100
+        }
+
+        console.log(accuracyData);
+
+        updateAccuracyData(accuracyData)
+    }, [userText.length, mistakes, updateAccuracyData]);
 
     // Mantener el focus del scroll en el currentIndex
     useEffect(() => {
