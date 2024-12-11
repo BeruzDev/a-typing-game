@@ -1,7 +1,7 @@
 import React,{ useState, useEffect, useRef } from 'react'
 import { useTheme } from '@mui/material/styles'
 
-const UserGeneratedText = ({ activeChar, onProgressChange, updateAccuracyData }) => { 
+const UserGeneratedText = ({ activeChar, onProgressChange, updateAccuracyData, isTracking, setIsTracking, handleTextCompleted }) => { 
     const theme = useTheme()
 
     const textareaColors = {
@@ -25,22 +25,31 @@ const UserGeneratedText = ({ activeChar, onProgressChange, updateAccuracyData })
     const [currentIndex, setCurrentIndex] = useState(0);
     const [mistakes, setMistakes] = useState([]);
 
+
+    //todo quitar este useEffect
     useEffect(() => {
-        if (userText){
+        if (!isTracking && currentIndex === userText.length)
+            console.log('Texto completado y tracking detenido.');
+    }, [isTracking, userText, currentIndex]);
+    
+    useEffect(() => {
+        if (isTracking && userText.length > 0){
             const progress = (currentIndex / userText.length) * 100;
             onProgressChange(progress)
         }
-    }, [currentIndex, userText, onProgressChange]);
+    }, [currentIndex, userText.length, onProgressChange, isTracking]);
 
     // Referencia del contenedor text-to-compare
     const containerRef = useRef(null)
 
     useEffect(() => {
-        if (!activeChar) return;
+        if (!activeChar || !isTracking) return;
 
         const currentChar = userText[currentIndex];
+        console.log(`Comparando: ${currentChar} con ${activeChar}`);
 
         if (currentChar === activeChar) {
+            console.log(`Correcto: avanzando al índice ${currentIndex + 1}`);
             setCurrentIndex((prevIndex) => prevIndex + 1);
         } else if (currentChar === ' ' || currentChar === '\n') {
             const remainingText = userText.slice(currentIndex + 1);
@@ -51,6 +60,7 @@ const UserGeneratedText = ({ activeChar, onProgressChange, updateAccuracyData })
                 setCurrentIndex(userText.length); // Mueve al final si no hay más caracteres
             }
         } else {
+            console.log(`Incorrecto: añadiendo error en el índice ${currentIndex}`);
             setMistakes((prevMistakes) => [...prevMistakes, currentIndex]);
             setCurrentIndex((prevIndex) => prevIndex + 1);
         }
@@ -59,22 +69,19 @@ const UserGeneratedText = ({ activeChar, onProgressChange, updateAccuracyData })
 
     //Calcular precisión
     useEffect(() => {
-        if (currentIndex === 0 || userText.length === 0) return
-
-        const total = userText.length
-        const totalTyped = currentIndex
-        const incorrect = mistakes.length
-        const correct = totalTyped - incorrect
-
-        const accuracyData = {
-            correct: (correct / total) * 100,
-            incorrect: (incorrect / total) * 100
+        if (isTracking && currentIndex > 0 && userText.length > 0) {
+            const total = userText.length
+            const totalTyped = currentIndex
+            const incorrect = mistakes.length
+            const correct = totalTyped - incorrect
+            const accuracyData = {
+                correct: (correct / total) * 100,
+                incorrect: (incorrect / total) * 100
+            }    
+            updateAccuracyData(accuracyData)
         }
 
-        console.log(accuracyData);
-
-        updateAccuracyData(accuracyData)
-    }, [userText.length, currentIndex, mistakes.length, updateAccuracyData]);
+    }, [userText.length, currentIndex, mistakes.length, updateAccuracyData, isTracking]);
 
     // Mantener el focus del scroll en el currentIndex
     useEffect(() => {
@@ -85,6 +92,14 @@ const UserGeneratedText = ({ activeChar, onProgressChange, updateAccuracyData })
             }
         }
     }, [currentIndex]);
+
+    useEffect(() => {
+        if (userText.length > 0 && currentIndex === userText.length) {
+            handleTextCompleted(true)
+        }
+
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [userText.length, handleTextCompleted, currentIndex]);
 
     const getCharacterClass = (index) => {
         const className = 
@@ -109,7 +124,9 @@ const UserGeneratedText = ({ activeChar, onProgressChange, updateAccuracyData })
     }
 
     const handlePasteText = () => {
+        console.log('Texto ingresado, iniciando tracking.');
         setIsTextEntered(true) //<-Controlamos si el usuario ha pegado el texto
+        setIsTracking(true)
     }
 
     return (
