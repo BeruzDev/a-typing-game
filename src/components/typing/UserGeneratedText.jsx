@@ -24,13 +24,6 @@ const UserGeneratedText = ({ activeChar, onProgressChange, updateAccuracyData, i
     const [isTextEntered, setIsTextEntered] = useState(false);
     const [currentIndex, setCurrentIndex] = useState(0);
     const [mistakes, setMistakes] = useState([]);
-
-
-    //todo quitar este useEffect
-    useEffect(() => {
-        if (!isTracking && currentIndex === userText.length)
-            console.log('Texto completado y tracking detenido.');
-    }, [isTracking, userText, currentIndex]);
     
     useEffect(() => {
         if (isTracking && userText.length > 0){
@@ -46,10 +39,8 @@ const UserGeneratedText = ({ activeChar, onProgressChange, updateAccuracyData, i
         if (!activeChar || !isTracking) return;
 
         const currentChar = userText[currentIndex];
-        console.log(`Comparando: ${currentChar} con ${activeChar}`);
 
         if (currentChar === activeChar) {
-            console.log(`Correcto: avanzando al índice ${currentIndex + 1}`);
             setCurrentIndex((prevIndex) => prevIndex + 1);
         } else if (currentChar === ' ' || currentChar === '\n') {
             const remainingText = userText.slice(currentIndex + 1);
@@ -60,7 +51,6 @@ const UserGeneratedText = ({ activeChar, onProgressChange, updateAccuracyData, i
                 setCurrentIndex(userText.length); // Mueve al final si no hay más caracteres
             }
         } else {
-            console.log(`Incorrecto: añadiendo error en el índice ${currentIndex}`);
             setMistakes((prevMistakes) => [...prevMistakes, currentIndex]);
             setCurrentIndex((prevIndex) => prevIndex + 1);
         }
@@ -124,7 +114,6 @@ const UserGeneratedText = ({ activeChar, onProgressChange, updateAccuracyData, i
     }
 
     const handlePasteText = () => {
-        console.log('Texto ingresado, iniciando tracking.');
         setIsTextEntered(true) //<-Controlamos si el usuario ha pegado el texto
         setIsTracking(true)
     }

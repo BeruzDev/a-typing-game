@@ -131,7 +131,6 @@ const updateAccuracyData = useCallback((accuracyData) => {
 }, [])
 
 const handleTextCompleted = useCallback((isCompleted) => {
-  console.log(`Estado de isCompleted: ${isCompleted}`); 
   setIsCompleted(isCompleted)
 }, [])
 
@@ -179,7 +178,6 @@ useEffect(() => {
 }, [currentLevel]);
 
 useEffect(() => {
-  console.log('isCompleted:', isCompleted);
 
   if (!isTracking || isCompleted) return 
 
