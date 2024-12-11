@@ -24,6 +24,10 @@
                 border: none;
                 outline: none;
             }
+
+            @include for-small-laptop{
+                padding: 0 50px 0 60px;
+            }
     
             &::-webkit-scrollbar{
                 width: 8px;
@@ -56,6 +60,10 @@
             opacity: 1;
             cursor: pointer;
         }
+
+        @include for-small-laptop {
+            left: 82%;
+        }
     }
 
     .text-to-compare{
@@ -64,26 +72,27 @@
         max-height: 185px;
         contain: content;
         overflow: hidden;
-        //todo: hacer que el contenedor este desenfocado por la parte inferior y superior
+        position: relative;
 
         @include for-small-laptop {
-            max-height: 185px
+            max-height: 170px;
+            padding: 0 50px 0 60px;
         }
 
         @include for-medium-laptop {
-            max-height: 185px
+            max-height: 285px;
         }
 
         @include for-large-laptop {
-            max-height: 285px
+            max-height: 285px;
         }
 
         @include for-desktop {
-            max-height: 285px
+            max-height: 285px;
         }   
 
         @include for-large-desktop {
-            max-height: 285px
+            max-height: 285px;
         }   
 
     }

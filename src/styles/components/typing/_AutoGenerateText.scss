@@ -1,4 +1,7 @@
+@import '../../utils/mixins';
+
 .text-container{
+
     .correct{
         opacity: 0.5;
     }
@@ -9,5 +12,9 @@
 
     .current {
         text-decoration: underline;
+    }
+
+    @include for-small-laptop{
+        padding: 0 50px 0 60px;
     }
 }
