@@ -52,7 +52,7 @@ Aquí tienes un ejemplo en acción:
 
 1. Clona este repositorio:
    ```bash
-   git clone https://github.com/tu-usuario/typing-game.git
+   git clone https://github.com/BeruzDev/a-typing-game
    ```
 2. Instala las dependencias:
    ```bash
