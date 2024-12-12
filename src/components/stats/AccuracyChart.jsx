@@ -1,5 +1,5 @@
-import React, { PureComponent }  from 'react'
-import { PieChart, Pie, Sector, Cell, ResponsiveContainer } from 'recharts'
+import React from 'react'
+import { PieChart, Pie, Cell, ResponsiveContainer } from 'recharts'
 import { useTheme } from '@mui/material/styles'
 
 const AccuracyChart = ({ accuracy }) => {
