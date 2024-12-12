@@ -4,10 +4,15 @@ module.exports = {
     webpack: {
         configure: (config) => {
             config.resolve.fallback = {
-            ...config.resolve.fallback,
-            crypto: false,  // Indica que no se necesita el módulo crypto
+                ...config.resolve.fallback,
+                crypto: false, 
             };
             return config;
         },
+    },
+    babel: {
+        plugins: [
+            "@babel/plugin-proposal-private-property-in-object", 
+        ],
     },
 };
