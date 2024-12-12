@@ -39,7 +39,7 @@ Una aplicación web diseñada para mejorar la velocidad y precisión en la mecan
 
 Aquí tienes un ejemplo en acción:
 
-![Vista Previa del Juego](assets/screenshots/AtypingGame.gif)
+![Vista Previa del Juego](src/assets/screenshots/AtypingGame.gif)
 
 ---
 
