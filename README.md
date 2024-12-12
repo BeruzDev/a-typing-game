@@ -1,11 +1,11 @@
 # A Typing Game - Juego de Mecanografía Interactivo 🖥️💬
 
-Una aplicación web diseñada para mejorar la velocidad y precisión en la mecanografía. A Typing Game permite a los usuarios practicar con palabras, frases, o incluso fragmentos de código en varios lenguajes, proporcionando un seguimiento de métricas en tiempo real.
+Una aplicación web diseñada para mejorar la velocidad y precisión en la mecanografía. **A Typing Game** permite a los usuarios practicar con palabras, frases, o incluso fragmentos de código en varios lenguajes, proporcionando un seguimiento de métricas en tiempo real.
 
 ## 📋 Índice
 
 - [Características](#características)
-- [Capturas de Pantalla](#capturas-de-pantalla)
+- [Vista Previa](#vista-previa)
 - [Despliegue](#despliegue)
 - [Uso](#uso)
 - [Estructura del Proyecto](#estructura-del-proyecto)
@@ -13,64 +13,67 @@ Una aplicación web diseñada para mejorar la velocidad y precisión en la mecan
 - [Contribuciones](#contribuciones)
 - [Licencia](#licencia)
 
+---
+
 ## ✨ Características
 
-- **Práctica de Mecanografía**: Practica con palabras, frases, o fragmentos de código subidas por el usuario.
-- **Panel de Métricas en Tiempo Real**: Visualización en vivo de velocidad, precisión y errores.
-- **Modo Oscuro/Claro**: Cambia el tema para facilitar la lectura en distintos ambientes.
-- **Sesión de Usuario**: Inicia sesión para guardar tus estadísticas y objetivos diarios.
-- **Personalización de Dificultad**: Ajusta la dificultad eligiendo entre palabras largas o cortas y frases de distintas dificultades.
-- **Modo Extremo**: Modo avanzado en el que solo se muestra la letra actual y sus alrededores, como si estuvieras en una “habitación oscura”.
+- **Práctica de Mecanografía**  
+  Mejora tu mecanografía con palabras, frases, o fragmentos de código proporcionados por el usuario.
 
-## 🖼️ Capturas de Pantalla
+- **Panel de Métricas en Tiempo Real**  
+  Visualización en vivo de:
+  - Palabras por minuto y su promedio
+  - Precisión global y por nivel
+  - Gráfico dinámico de aciertos y errores
+  - Tiempo invertido en cada nivel
 
-_**(TODAVÍA ESTOY TRABAJANDO EN ELLO!!)**_
+- **Modo Oscuro/Claro**  
+  Cambia entre temas para mayor comodidad visual.
+
+- **Texto Autogenerado o Proporcionado por el Usuario**  
+  Escoge entre practicar con texto generado automáticamente o subir tu propio texto o código.
+
+---
+
+## 🖼️ Vista Previa
+
+Aquí tienes un ejemplo en acción:
+
+![Vista Previa del Juego](assets/screenshots/AtypingGame.gif)
+
+---
 
 ## 🚀 Despliegue
 
-Accede a la aplicación en el siguiente enlace:
+### Acceso en línea
+[**A Typing Game**](https://typing-game.netlify.app) *(enlace provisional, todavía no está desplegado)*
 
-[**A Typing Game**](https://typing-game.netlify.app)  *(enlace provisional, todavía no esta deployed)*
+### Ejecución local
+
+1. Clona este repositorio:
+   ```bash
+   git clone https://github.com/tu-usuario/typing-game.git
+   ```
+2. Instala las dependencias:
+   ```bash
+   npm install
+   ```
+3. Inicia el servidor de desarrollo:
+   ```bash
+   npm start
+   ```
+4. Accede a la aplicación en `http://localhost:3000`.
+
+---
 
 ## 🕹️ Uso
 
-1. Accede a la página y selecciona el tipo de práctica (palabras, frases o código).
-2. Escribe en el cuadro de texto en el centro para comparar con el texto objetivo.
-3. Observa las métricas en tiempo real, como la velocidad, precisión y errores.
-4. Puedes iniciar sesión si deseas guardar tu progreso o continuar como invitado.
-5. Ajusta el modo de visualización claro/oscuro usando el conmutador de tema.
+1. Accede a la página y selecciona el tipo de práctica: **texto autogenerado** o **código proporcionado por el usuario**.
+2. Comienza a mecanografiar el texto para activar las métricas en tiempo real.
+3. Observa las métricas: velocidad, precisión, gráfico de aciertos y errores, y tiempo invertido en cada nivel.
+4. Cambia entre **modo claro/oscuro** según tus preferencias.
 
-## 📂 Estructura del Proyecto
-
-```plaintext
-src
-├── components
-│   ├── InputBox.jsx          # Componente donde el usuario escribe
-│   ├── ModeSwitcher.jsx      # Selector de modo claro/oscuro
-│   ├── StatsPanel.jsx        # Panel de métricas en tiempo real
-│   ├── Summary.jsx           # Resumen al final de la sesión
-│   └── TextDisplay.jsx       # Componente que muestra el texto objetivo
-├── hooks
-│   └── useTimer.js           # Hook personalizado para controlar el temporizador
-├── styles
-│   ├── main.scss             # Estilos principales y variables globales
-│   ├── base
-│   │   ├── _reset.scss       # Estilos de reset
-│   │   └── _typography.scss  # Estilos de tipografía
-│   ├── components
-│   │   ├── _InputBox.scss
-│   │   ├── _StatsPanel.scss
-│   │   └── _TextDisplay.scss
-│   ├── layout
-│   │   ├── _container.scss
-│   │   ├── _footer.scss
-│   │   └── _header.scss
-│   └── utils
-│       ├── _colors.scss      # Paleta de colores
-│       ├── _functions.scss   # Funciones Sass
-│       └── _mixins.scss      # Mixins de estilos
-├── App.js
-└── index.js
+---
 
 ## 🛠️ Tecnologías Utilizadas
 
@@ -78,10 +81,14 @@ src
 - **Estilos**: SCSS, CSS Modules
 - **Despliegue**: Netlify
 
+---
+
 ## 🤝 Contribuciones
 
 Las contribuciones son bienvenidas. 
 Si deseas mejorar el proyecto, abre un issue o envía un pull request.
+
+---
 
 ## 📄 Licencia
 
