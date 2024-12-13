@@ -1,0 +1,18 @@
+.mobile-message {
+    width: 100dvw;
+    height: 100dvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #222036;
+    color: #83E949;
+    padding: 50px;
+    font-size: 18px;
+    text-align: center;
+    z-index: 1000;
+    box-sizing: content-box;
+}

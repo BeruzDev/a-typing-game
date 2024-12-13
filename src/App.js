@@ -7,6 +7,7 @@ import StatsPanel from "./components/StatsPanel";
 import Summary from "./components/Summary";
 import TextDisplay from "./components/TextDisplay";
 import TypingSwitcher from './components/TypingSwitcher';
+import MobileMessage from './components/MobileMessage';
 import './styles/main.scss';
 
 function App() {
@@ -89,6 +90,7 @@ const toggleMode = () => {
   useEffect(() => {
       // Activa la tecla presionada
       const handleKeyDown = (event) => {
+        console.log('Tecla presionada: ', event.code);
         setActiveKey(event.code)//<-Para resaltar la tecla en el teclado virtual
         setActiveChar(event.key)//<-Para comparar con el texto
 
@@ -205,6 +207,7 @@ useEffect(() => {
     <ThemeProvider theme={isDarkMode ? darkTheme : lightTheme}>
       <CssBaseline />
       <div className='app'>
+      <MobileMessage />
         <div className='display'>
           <div className='top-row'>
             <h2>A Typing Game</h2>
