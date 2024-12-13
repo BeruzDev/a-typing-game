@@ -16,7 +16,7 @@ const keys = [
         { chart: "'", shift: '?', alt: '', size: 'default', keyListener: "Minus" },
         { chart: '¡', shift: '¿', alt: '', size: 'default', keyListener: 'Equal' },
         { chart: '←backspace', shift: '', alt: '', size: 'backspace', keyListener: 'Backspace' },
-        { chart: 'º', shift: 'ª', alt: '\\', size: 'default', keyListener: 'Backquote' },
+        { chart: 'º', shift: 'ª', alt: '\\', size: 'default', keyListener: 'Backslash' },
     ],
     [
         { chart: '⇥', shift: '', alt: '', size: 'tab', keyListener: 'Tab' },

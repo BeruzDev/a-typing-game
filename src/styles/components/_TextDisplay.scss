@@ -4,4 +4,8 @@
     flex-direction: column;
     justify-content: center;
     overflow-wrap: break-word;
+
+    &:focus{
+        outline: none;
+    }
 }
