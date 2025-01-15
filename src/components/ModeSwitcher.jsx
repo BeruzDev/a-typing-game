@@ -13,7 +13,11 @@ const ModeSwitcher = ({ toggleTheme, isDarkMode, textDisplayRef }) =>  {
 
 
     return (
-        <IconButton onClick={handleKeyDown} color="inherit">
+        <IconButton 
+            onClick={handleKeyDown} 
+            color="inherit"
+            aria-label={isDarkMode ? 'Switch to  light mode' : 'Switch to dark mode'}
+        >
             {isDarkMode ? <LightMode /> : <DarkMode />} 
         </IconButton>
     )
