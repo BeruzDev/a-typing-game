@@ -46,7 +46,7 @@ Aquí tienes un ejemplo en acción:
 ## 🚀 Despliegue
 
 ### Acceso en línea
-[**A Typing Game**](https://typing-game.netlify.app) *(enlace provisional, todavía no está desplegado)*
+[**A Typing Game**](https://typing-game.netlify.app)
 
 ### Ejecución local
 
