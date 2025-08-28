@@ -1,0 +1,29 @@
+.app-footer {
+  position: fixed;
+	left: 0;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+  padding-bottom: 10px;
+  font-size: 1rem;
+  color: #888;
+  z-index: 100;
+  background: transparent;
+  user-select: none;
+}
+
+.app-footer p {
+	font-size: .8rem;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.app-footer .heart-icon {
+  font-size: 1.2em;
+  color: #E45050;
+  display: inline-flex;
+  align-items: center;
+  vertical-align: middle;
+}

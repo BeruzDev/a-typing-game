@@ -9,7 +9,9 @@ import TextDisplay from "./components/TextDisplay";
 import TypingSwitcher from './components/TypingSwitcher';
 import MobileMessage from './components/MobileMessage';
 import GithubLink from './components/GithubLink';
+import { CiHeart } from "react-icons/ci";
 import './styles/main.scss';
+import './styles/components/_AppFooter.scss';
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(false); //<-Modo claro por defecto
@@ -269,6 +271,11 @@ useEffect(() => {
             </div>
           </div>
         </div>
+        <footer className="app-footer">
+            <p>
+              Desarrollado por BeruzDev <CiHeart className='heart-icon'/>
+            </p>
+        </footer>
       </div>
     </ThemeProvider> 
   );
